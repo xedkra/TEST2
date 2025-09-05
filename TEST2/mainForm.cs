@@ -69,5 +69,15 @@ namespace TEST2
             tex_podd tex_Podd = new tex_podd();
             tex_Podd.Show();
         }
+
+        private void выходToolStipMenuItem_Click(object sender, System.EventArgs e)
+        {
+            this.Hide();
+            Vxod vxod = new Vxod();
+            vxod.Show();
+        }
+
+
+
     }
 }

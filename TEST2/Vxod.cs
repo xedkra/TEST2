@@ -86,17 +86,31 @@ namespace TEST2
                 return;
             }
 
-
-            string userInfo = GetUserInfo(userId);
-            if (userInfo != null)
+            var (userInfo, accessLevel) = GetUserInfo(userId);
+            if (userInfo != null && accessLevel != -1)
             {
                 MessageBox.Show($"Добро пожаловать!\n\n{userInfo}", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                mainForm mainForm = new mainForm();
-                mainForm.Show();
+                Form formToOpen = null;
 
+                switch (accessLevel)
+                {
+                    case 1:
+                        formToOpen = new mainForm();
+                        break;
+                    case 2:
+                        formToOpen = new director_2();
+                        break;
+                    case 3:
+                        formToOpen = new sisADMIN_3();
+                        break;
+                    default:
+                        MessageBox.Show("Неизвестный уровень доступа.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                }
+
+                formToOpen.Show();
                 this.Hide();
-
             }
             else
             {
@@ -134,7 +148,7 @@ namespace TEST2
                 }
             }
         }
-        private string GetUserInfo(int userId)
+        private (string userInfo, int accessLevel) GetUserInfo(int userId)
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -142,24 +156,24 @@ namespace TEST2
                 {
                     connection.Open();
                     string query = @"
-                            SELECT 
-                                u.id AS user_id,
-                                u.Firstname,
-                                u.Lastname,
-                                u.Number,
-                                o.Organizations AS organization_name,
-                                j.JobTitle AS job_title,
-                                l.LVL AS access_level
-                            FROM 
-                                users u
-                            JOIN 
-                                lvl_access l ON u.LvL_ID = l.id
-                            JOIN 
-                                jobtitle j ON l.JobTitle_ID = j.id
-                            JOIN 
-                                organizations o ON j.ORG_ID = o.id
-                            WHERE 
-                                u.id=@id";
+                SELECT 
+                    u.id AS user_id,
+                    u.Firstname,
+                    u.Lastname,
+                    u.Number,
+                    o.Organizations AS organization_name,
+                    j.JobTitle AS job_title,
+                    l.LVL AS access_level
+                FROM 
+                    users u
+                JOIN 
+                    lvl_access l ON u.LvL_ID = l.id
+                JOIN 
+                    jobtitle j ON l.JobTitle_ID = j.id
+                JOIN 
+                    organizations o ON j.ORG_ID = o.id
+                WHERE 
+                    u.id=@id";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
@@ -169,32 +183,41 @@ namespace TEST2
                         {
                             if (reader.Read())
                             {
-                                return $"ID: {reader["user_id"]}\n" +
-                                       $"Имя: {reader["Firstname"]}\n" +
-                                       $"Фамилия: {reader["Lastname"]}\n" +
-                                       $"Номер: {reader["Number"]}\n" +
-                                       $"Организация: {reader["organization_name"]}\n" +
-                                       $"Должность: {reader["job_title"]}\n" +
-                                       $"Уровень доступа: {reader["access_level"]}";
+                                string info = $"ID: {reader["user_id"]}\n" +
+                                              $"Имя: {reader["Firstname"]}\n" +
+                                              $"Фамилия: {reader["Lastname"]}\n" +
+                                              $"Номер: {reader["Number"]}\n" +
+                                              $"Организация: {reader["organization_name"]}\n" +
+                                              $"Должность: {reader["job_title"]}\n" +
+                                              $"Уровень доступа: {reader["access_level"]}";
+
+                                int lvl = Convert.ToInt32(reader["access_level"]);
+                                return (info, lvl);
                             }
                             else
-                                return null;
+                                return (null, -1);
                         }
                     }
                 }
                 catch (MySqlException)
                 {
-                    return null;
+                    return (null, -1);
                 }
             }
         }
 
-       
-        
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            // Если ничего делать не нужно, оставьте пустым
+        }
+
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
     }
+
 }

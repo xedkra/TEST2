@@ -51,8 +51,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(1067, 554);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -65,8 +66,9 @@
             this.panel2.Controls.Add(this.button5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 450);
+            this.panel2.Size = new System.Drawing.Size(1067, 554);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -76,9 +78,10 @@
             this.Close_button1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Close_button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Close_button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Close_button1.Location = new System.Drawing.Point(785, 0);
+            this.Close_button1.Location = new System.Drawing.Point(1047, 0);
+            this.Close_button1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Close_button1.Name = "Close_button1";
-            this.Close_button1.Size = new System.Drawing.Size(15, 13);
+            this.Close_button1.Size = new System.Drawing.Size(18, 17);
             this.Close_button1.TabIndex = 5;
             this.Close_button1.Text = "X";
             this.Close_button1.Click += new System.EventHandler(this.Close_button1_Click);
@@ -87,9 +90,10 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(400, 0);
+            this.button2.Location = new System.Drawing.Point(533, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(339, 68);
+            this.button2.Size = new System.Drawing.Size(452, 84);
             this.button2.TabIndex = 1;
             this.button2.Text = "Связь и заявки";
             this.button2.UseVisualStyleBackColor = true;
@@ -100,8 +104,9 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(400, 68);
+            this.button1.Size = new System.Drawing.Size(533, 84);
             this.button1.TabIndex = 0;
             this.button1.Text = "Состояние объекта";
             this.button1.UseVisualStyleBackColor = true;
@@ -112,9 +117,10 @@
             this.button5.BackColor = System.Drawing.SystemColors.MenuBar;
             this.button5.ContextMenuStrip = this.contextMenuStrip1;
             this.button5.Image = global::TEST2.Properties.Resources._1564534_customer_man_user_account_profile_icon__1_1;
-            this.button5.Location = new System.Drawing.Point(737, 0);
+            this.button5.Location = new System.Drawing.Point(983, 0);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(63, 68);
+            this.button5.Size = new System.Drawing.Size(84, 84);
             this.button5.TabIndex = 8;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -122,39 +128,42 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.имяФамилияToolStripMenuItem,
             this.техподдержкаToolStripMenuItem,
             this.выходИзАккаунтаToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(207, 76);
             // 
             // имяФамилияToolStripMenuItem
             // 
             this.имяФамилияToolStripMenuItem.Name = "имяФамилияToolStripMenuItem";
-            this.имяФамилияToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.имяФамилияToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.имяФамилияToolStripMenuItem.Text = "Имя фамилия";
             // 
             // техподдержкаToolStripMenuItem
             // 
             this.техподдержкаToolStripMenuItem.Name = "техподдержкаToolStripMenuItem";
-            this.техподдержкаToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.техподдержкаToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.техподдержкаToolStripMenuItem.Text = "Тех.поддержка";
             this.техподдержкаToolStripMenuItem.Click += new System.EventHandler(this.техподдержкаToolStripMenuItem_Click);
             // 
             // выходИзАккаунтаToolStripMenuItem
             // 
             this.выходИзАккаунтаToolStripMenuItem.Name = "выходИзАккаунтаToolStripMenuItem";
-            this.выходИзАккаунтаToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.выходИзАккаунтаToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.выходИзАккаунтаToolStripMenuItem.Text = "Выход из аккаунта";
+            this.выходИзАккаунтаToolStripMenuItem.Click += new System.EventHandler(this.выходToolStipMenuItem_Click);
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mainform";
