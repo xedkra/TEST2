@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace TEST2
 {
+    // ваня привет
     public partial class Vxod : Form
     {
         public Vxod()
@@ -72,6 +73,11 @@ namespace TEST2
         {
             String loginUser = login.Text;
             String passUser = pass.Text;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
