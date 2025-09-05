@@ -208,7 +208,8 @@ namespace TEST2
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            // Если ничего делать не нужно, оставьте пустым
+            // просто пусть будет я куда то тыкнул оно где то появилось, не мешает.
+     
         }
 
 
