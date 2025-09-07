@@ -8,16 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Microsoft.EntityFrameworkCore;
+using TEST2.Models;
+
 
 
 namespace TEST2
 {
-    // ваня привет
     public partial class Vxod : Form
     {
-
-        private string connectionString = "server=localhost;userid=root;password=Fgtkmcby2308;database=KPB";
-
         public Vxod()
         {
             InitializeComponent();
@@ -37,8 +36,9 @@ namespace TEST2
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            // хуйня пустая пусть будет
         }
+
         Point lastpoint;
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -66,7 +66,7 @@ namespace TEST2
                 this.Left += e.X - lastpoint.X;
                 this.Top += e.Y - lastpoint.Y;
             }
-                
+
         }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
@@ -117,89 +117,58 @@ namespace TEST2
                 MessageBox.Show("Не удалось получить информацию о пользователе.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private int AuthenticateUser(string login, string password)
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (var context = new AppDbContext())
             {
                 try
                 {
-                    connection.Open();
-                    string query = @"
-                            SELECT u.id
-                            FROM logpas lp
-                            JOIN users u ON u.Login_password_ID = lp.id
-                            WHERE lp.login=@login AND lp.password=@password";
+                    var user = context.Users
+                        .Include(u => u.LoginPassword)
+                        .FirstOrDefault(u => u.LoginPassword.login == login &&
+                                             u.LoginPassword.password == password);
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@login", login);
-                        cmd.Parameters.AddWithValue("@password", password);
-
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
-                            return Convert.ToInt32(result);
-                        else
-                            return -1;
-                    }
+                    return user?.Id ?? -1;
                 }
-                catch (MySqlException)
+                catch (Exception ex)
                 {
+                    MessageBox.Show($"Ошибка при аутентификации: {ex.Message}");
                     return -1;
                 }
             }
         }
+
         private (string userInfo, int accessLevel) GetUserInfo(int userId)
         {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (var context = new AppDbContext())
             {
                 try
                 {
-                    connection.Open();
-                    string query = @"
-                SELECT 
-                    u.id AS user_id,
-                    u.Firstname,
-                    u.Lastname,
-                    u.Number,
-                    o.Organizations AS organization_name,
-                    j.JobTitle AS job_title,
-                    l.LVL AS access_level
-                FROM 
-                    users u
-                JOIN 
-                    lvl_access l ON u.LvL_ID = l.id
-                JOIN 
-                    jobtitle j ON l.JobTitle_ID = j.id
-                JOIN 
-                    organizations o ON j.ORG_ID = o.id
-                WHERE 
-                    u.id=@id";
+                    var user = context.Users
+                        .Include(u => u.AccessLevel)
+                            .ThenInclude(al => al.JobTitle)
+                                .ThenInclude(jt => jt.Organization)
+                        .FirstOrDefault(u => u.Id == userId);
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    if (user != null)
                     {
-                        cmd.Parameters.AddWithValue("@id", userId);
+                        string info = $"ID: {user.Id}\n" +
+                                      $"Имя: {user.Firstname}\n" +
+                                      $"Фамилия: {user.Lastname}\n" +
+                                      $"Номер: {user.Number}\n" +
+                                      $"Организация: {user.AccessLevel.JobTitle.Organization.Organizations}\n" +
+                                      $"Должность: {user.AccessLevel.JobTitle.JobTitles}\n" +
+                                      $"Уровень доступа: {user.AccessLevel.LVL}";
 
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                string info = $"ID: {reader["user_id"]}\n" +
-                                              $"Имя: {reader["Firstname"]}\n" +
-                                              $"Фамилия: {reader["Lastname"]}\n" +
-                                              $"Номер: {reader["Number"]}\n" +
-                                              $"Организация: {reader["organization_name"]}\n" +
-                                              $"Должность: {reader["job_title"]}\n" +
-                                              $"Уровень доступа: {reader["access_level"]}";
-
-                                int lvl = Convert.ToInt32(reader["access_level"]);
-                                return (info, lvl);
-                            }
-                            else
-                                return (null, -1);
-                        }
+                        return (info, user.AccessLevel.LVL);
+                    }
+                    else
+                    {
+                        return (null, -1);
                     }
                 }
-                catch (MySqlException)
+                catch (Exception)
                 {
                     return (null, -1);
                 }
@@ -208,17 +177,38 @@ namespace TEST2
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            // просто пусть будет я куда то тыкнул оно где то появилось, не мешает.
-     
+            // Метод для обработки события Paint второй панели
         }
-
-
-
 
         private void label1_Click(object sender, EventArgs e)
         {
+            // Обработчик клика по label1
+        }
 
+        // Добавляем остальные методы, которые могли быть в Designer.cs
+        private void login_TextChanged(object sender, EventArgs e)
+        {
+            // Обработчик изменения текста в поле login
+        }
+
+        private void pass_TextChanged(object sender, EventArgs e)
+        {
+            // Обработчик изменения текста в поле pass
+        }
+
+        private void Vxod_Load(object sender, EventArgs e)
+        {
+            // Обработчик загрузки формы
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            // Обработчик клика по label2
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            // Обработчик клика по label3
         }
     }
-
 }
