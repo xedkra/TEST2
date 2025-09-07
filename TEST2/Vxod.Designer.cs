@@ -29,161 +29,161 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vxod));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.pass = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.login = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Close_button1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new System.Windows.Forms.Panel();
+            buttonLogin = new System.Windows.Forms.Button();
+            pass = new System.Windows.Forms.TextBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            login = new System.Windows.Forms.TextBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            panel2 = new System.Windows.Forms.Panel();
+            Close_button1 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.Controls.Add(this.buttonLogin);
-            this.panel1.Controls.Add(this.pass);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.login);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(580, 554);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            panel1.Controls.Add(buttonLogin);
+            panel1.Controls.Add(pass);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(login);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(580, 692);
+            panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
+            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLogin.Location = new System.Drawing.Point(172, 443);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(240, 53);
-            this.buttonLogin.TabIndex = 5;
-            this.buttonLogin.Text = "Войти";
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            buttonLogin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            buttonLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(128, 128, 255);
+            buttonLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
+            buttonLogin.Location = new System.Drawing.Point(172, 554);
+            buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            buttonLogin.Name = "buttonLogin";
+            buttonLogin.Size = new System.Drawing.Size(240, 66);
+            buttonLogin.TabIndex = 5;
+            buttonLogin.Text = "Войти";
+            buttonLogin.UseVisualStyleBackColor = false;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // pass
             // 
-            this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pass.Location = new System.Drawing.Point(172, 319);
-            this.pass.Margin = new System.Windows.Forms.Padding(4);
-            this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(327, 40);
-            this.pass.TabIndex = 4;
-            this.pass.UseSystemPasswordChar = true;
+            pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
+            pass.Location = new System.Drawing.Point(172, 399);
+            pass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pass.Name = "pass";
+            pass.Size = new System.Drawing.Size(327, 40);
+            pass.TabIndex = 4;
+            pass.UseSystemPasswordChar = true;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::TEST2.Properties.Resources._2849796_lock_security_multimedia_close_protection_icon__4_;
-            this.pictureBox2.Location = new System.Drawing.Point(84, 308);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Resources._2849796_lock_security_multimedia_close_protection_icon__4_;
+            pictureBox2.Location = new System.Drawing.Point(84, 385);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(48, 48);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
             // 
             // login
             // 
-            this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.login.Location = new System.Drawing.Point(172, 230);
-            this.login.Margin = new System.Windows.Forms.Padding(4);
-            this.login.Multiline = true;
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(327, 36);
-            this.login.TabIndex = 2;
-            this.login.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            login.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
+            login.Location = new System.Drawing.Point(172, 288);
+            login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            login.Multiline = true;
+            login.Name = "login";
+            login.Size = new System.Drawing.Size(327, 44);
+            login.TabIndex = 2;
+            login.TextChanged += textBox1_TextChanged;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TEST2.Properties.Resources._1564534_customer_man_user_account_profile_icon__1_1;
-            this.pictureBox1.Location = new System.Drawing.Point(84, 219);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources._1564534_customer_man_user_account_profile_icon__1_1;
+            pictureBox1.Location = new System.Drawing.Point(84, 274);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(48, 48);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Controls.Add(this.Close_button1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 121);
-            this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            panel2.Controls.Add(Close_button1);
+            panel2.Controls.Add(label1);
+            panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            panel2.Location = new System.Drawing.Point(0, 0);
+            panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(580, 151);
+            panel2.TabIndex = 0;
+            panel2.Paint += panel2_Paint;
+            panel2.MouseDown += panel2_MouseDown;
+            panel2.MouseMove += panel2_MouseMove;
             // 
             // Close_button1
             // 
-            this.Close_button1.AutoSize = true;
-            this.Close_button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Close_button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Close_button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Close_button1.Location = new System.Drawing.Point(560, 0);
-            this.Close_button1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Close_button1.Name = "Close_button1";
-            this.Close_button1.Size = new System.Drawing.Size(18, 17);
-            this.Close_button1.TabIndex = 7;
-            this.Close_button1.Text = "X";
-            this.Close_button1.Click += new System.EventHandler(this.Close_button1_Click);
+            Close_button1.AutoSize = true;
+            Close_button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            Close_button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            Close_button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            Close_button1.Location = new System.Drawing.Point(560, 0);
+            Close_button1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Close_button1.Name = "Close_button1";
+            Close_button1.Size = new System.Drawing.Size(18, 17);
+            Close_button1.TabIndex = 7;
+            Close_button1.Text = "X";
+            Close_button1.Click += Close_button1_Click;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(137, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 71);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ВХОД";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            label1.Location = new System.Drawing.Point(137, 32);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(336, 89);
+            label1.TabIndex = 0;
+            label1.Text = "ВХОД";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
+            label1.MouseMove += label1_MouseMove;
             // 
             // Vxod
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 554);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Vxod";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vxod";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(580, 692);
+            Controls.Add(panel1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "Vxod";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Vxod";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ResumeLayout(false);
 
         }
 
