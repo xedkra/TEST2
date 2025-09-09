@@ -102,7 +102,7 @@ namespace TEST2
                         formToOpen = new director_2();
                         break;
                     case 3:
-                        formToOpen = new sisADMIN_3();
+                        formToOpen = new obslyga_3();
                         break;
                     default:
                         MessageBox.Show("Неизвестный уровень доступа.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
