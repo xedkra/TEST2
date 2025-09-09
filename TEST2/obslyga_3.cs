@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TEST2
 {
-    public partial class sisADMIN_3 : Form
+    public partial class obslyga_3 : Form
     {
-        public sisADMIN_3()
+        public obslyga_3()
         {
             InitializeComponent();
         }

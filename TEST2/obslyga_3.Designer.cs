@@ -1,6 +1,6 @@
 ﻿namespace TEST2
 {
-    partial class sisADMIN_3
+    partial class obslyga_3
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sisADMIN_3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(obslyga_3));
             this.SuspendLayout();
             // 
             // sisADMIN_3
