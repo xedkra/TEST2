@@ -22,14 +22,14 @@ namespace TEST2
 
         }
 
-   
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-      
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -50,7 +50,7 @@ namespace TEST2
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -91,6 +91,11 @@ namespace TEST2
             this.Hide();
             tex_podd tex_Podd = new tex_podd();
             tex_Podd.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TEST2
 {
-    partial class director_2
+    partial class Profileform
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(director_2));
-            this.SuspendLayout();
-            // 
-            // director_2
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "director_2";
-            this.Text = "director_2";
-            this.ResumeLayout(false);
-
+            this.Text = "profileform";
         }
 
         #endregion

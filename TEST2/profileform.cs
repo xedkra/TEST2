@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TEST2
 {
-    public partial class obslyga_3 : Form
+    public partial class Profileform : Form
     {
-        public obslyga_3()
+        public Profileform()
         {
             InitializeComponent();
         }
