@@ -58,13 +58,15 @@
             richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
             richTextBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            richTextBox1.Location = new System.Drawing.Point(815, 77);
+            richTextBox1.Location = new System.Drawing.Point(773, 76);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new System.Drawing.Size(119, 71);
+            richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            richTextBox1.Size = new System.Drawing.Size(161, 85);
             richTextBox1.TabIndex = 9;
             richTextBox1.Text = "Главная\nИмя/Фамилия\nТех.Поддержка\nВыход из аккаунта";
             richTextBox1.Visible = false;
+            richTextBox1.MouseLeave += richTextBox1_MouseLeave_1;
             // 
             // Close_button1
             // 
@@ -115,7 +117,6 @@
             button5.Size = new System.Drawing.Size(74, 79);
             button5.TabIndex = 8;
             button5.UseVisualStyleBackColor = false;
-            button5.MouseLeave += button5_MouseLeave;
             button5.MouseUp += button5_MouseUp;
             // 
             // obslyga_3
@@ -127,6 +128,7 @@
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "obslyga_3";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Obslyga3";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

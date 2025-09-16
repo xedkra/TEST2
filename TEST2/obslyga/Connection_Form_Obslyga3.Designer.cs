@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel2 = new System.Windows.Forms.Panel();
+            tabControl1 = new System.Windows.Forms.TabControl();
             richTextBox1 = new System.Windows.Forms.RichTextBox();
             panel1 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             // panel2
             // 
             panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            panel2.Controls.Add(tabControl1);
             panel2.Controls.Add(richTextBox1);
             panel2.Controls.Add(panel1);
             panel2.Controls.Add(Close_button1);
@@ -56,18 +58,28 @@
             panel2.Size = new System.Drawing.Size(933, 519);
             panel2.TabIndex = 2;
             // 
+            // tabControl1
+            // 
+            tabControl1.Location = new System.Drawing.Point(3, 134);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new System.Drawing.Size(930, 382);
+            tabControl1.TabIndex = 11;
+            // 
             // richTextBox1
             // 
             richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
             richTextBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            richTextBox1.Location = new System.Drawing.Point(392, 240);
+            richTextBox1.Location = new System.Drawing.Point(772, 75);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new System.Drawing.Size(212, 148);
-            richTextBox1.TabIndex = 1;
-            richTextBox1.Text = "\n";
-            richTextBox1.TextChanged += richTextBox1_TextChanged_1;
+            richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            richTextBox1.Size = new System.Drawing.Size(161, 85);
+            richTextBox1.TabIndex = 10;
+            richTextBox1.Text = "Главная\nИмя/Фамилия\nТех.Поддержка\nВыход из аккаунта";
+            richTextBox1.Visible = false;
+            richTextBox1.MouseLeave += richTextBox1_MouseLeave_1;
             // 
             // panel1
             // 
@@ -83,7 +95,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
-            label1.Location = new System.Drawing.Point(48, 16);
+            label1.Location = new System.Drawing.Point(62, 17);
             label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(210, 24);
@@ -126,6 +138,7 @@
             button1.TabIndex = 0;
             button1.Text = "Состояние объекта";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button5
             // 
@@ -137,7 +150,6 @@
             button5.Size = new System.Drawing.Size(74, 78);
             button5.TabIndex = 9;
             button5.UseVisualStyleBackColor = false;
-            button5.MouseLeave += button5_MouseLeave;
             button5.MouseUp += button5_MouseUp;
             // 
             // Connection_Form_Obslyga3
@@ -166,5 +178,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

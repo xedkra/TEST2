@@ -12,6 +12,7 @@ namespace TEST2
 {
     public partial class Connection_Form_Obslyga3 : Form
     {
+        //ПРОФИЛЬ
         private class ClickableArea
         {
             public int Start { get; set; }
@@ -25,6 +26,7 @@ namespace TEST2
         public Connection_Form_Obslyga3()
         {
             InitializeComponent();
+            InitializeConnectionTab();
             InitializeRichTextBox();
             richTextBox1.Visible = false;
         }
@@ -44,7 +46,14 @@ namespace TEST2
 
             // Добавляем кликабельные области (БЕЗ ЦВЕТА)
             AddClickableArea("Главная",
-                () => ShowForm(new obslyga_3()));
+                 () =>
+                 {
+                     this.Hide();
+
+                     // Создаем и показываем главную форму
+                     obslyga_3 obslyga_3 = new obslyga_3();
+                     obslyga_3.Show();
+                 });
 
             AddClickableArea("Имя/Фамилия",
                 () => ShowForm(new ProfileForm()));
@@ -173,11 +182,8 @@ namespace TEST2
             richTextBox1.BringToFront();
             richTextBox1.Focus();
         }
+        //ПРОФИЛЬ КОНЧИЛСЯ
 
-        private void button5_MouseLeave(object sender, EventArgs e)
-        {
-            richTextBox1.Visible = false;
-        }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -188,5 +194,87 @@ namespace TEST2
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            State_Form_obslyga3 state_Form_Obslyga3 = new State_Form_obslyga3();
+            state_Form_Obslyga3.Show();
+            this.Hide();
+        }
+
+        private void richTextBox1_MouseLeave_1(object sender, EventArgs e)
+        {
+            richTextBox1.Visible = false;
+        }
+        //ЛИСТ СОТРУДНИКОВ
+        private void InitializeConnectionTab()
+        {
+            // Создаем вкладку
+            TabPage connectionTab = new TabPage("Связь");
+            tabControl1.TabPages.Add(connectionTab);
+
+            // Создаем разделитель
+            SplitContainer splitContainer = new SplitContainer();
+            splitContainer.Dock = DockStyle.Fill;
+            splitContainer.Orientation = Orientation.Horizontal;
+
+            // Верхняя панель - сотрудники на объекте
+            GroupBox onSiteGroup = new GroupBox();
+            onSiteGroup.Text = "Сотрудники на объекте сегодня";
+            onSiteGroup.Dock = DockStyle.Fill;
+
+            ListView onSiteListView = new ListView();
+            onSiteListView.View = View.Details;
+            onSiteListView.Dock = DockStyle.Fill;
+            onSiteListView.Columns.AddRange(new ColumnHeader[] {
+            new ColumnHeader() { Text = "ФИО", Width = 150 },
+            new ColumnHeader() { Text = "Должность", Width = 120 },
+            new ColumnHeader() { Text = "Телефон", Width = 110 }
+        });
+
+            // Нижняя панель - доступные сотрудники
+            GroupBox availableGroup = new GroupBox();
+            availableGroup.Text = "Доступные сотрудники обслуживающей компании";
+            availableGroup.Dock = DockStyle.Fill;
+
+            ListView availableListView = new ListView();
+            availableListView.View = View.Details;
+            availableListView.Dock = DockStyle.Fill;
+            availableListView.Columns.AddRange(new ColumnHeader[] {
+            new ColumnHeader() { Text = "ФИО", Width = 150 },
+            new ColumnHeader() { Text = "Должность", Width = 120 },
+            new ColumnHeader() { Text = "Телефон", Width = 110 },
+            new ColumnHeader() { Text = "Статус", Width = 80 }
+        });
+
+            // Добавляем элементы
+            onSiteGroup.Controls.Add(onSiteListView);
+            availableGroup.Controls.Add(availableListView);
+
+            splitContainer.Panel1.Controls.Add(onSiteGroup);
+            splitContainer.Panel2.Controls.Add(availableGroup);
+
+            connectionTab.Controls.Add(splitContainer);
+
+            // Загрузка данных
+            LoadEmployeesData(onSiteListView, availableListView);
+        }
+
+        private void LoadEmployeesData(ListView onSiteList, ListView availableList)
+        {
+            // Пример данных - сотрудники на объекте
+            onSiteList.Items.AddRange(new ListViewItem[] {
+            new ListViewItem(new string[] { "Иванов И.И.", "Инженер", "+7-999-123-45-67" }),
+            new ListViewItem(new string[] { "Петров П.П.", "Техник", "+7-999-765-43-21" })
+        });
+
+            // Пример данных - доступные сотрудники
+            availableList.Items.AddRange(new ListViewItem[] {
+            new ListViewItem(new string[] { "Сидоров С.С.", "Менеджер", "+7-999-111-22-33", "Доступен" }),
+            new ListViewItem(new string[] { "Кузнецов К.К.", "Специалист", "+7-999-444-55-66", "Занят" })
+        });
+        }
+        //ЛИСТ СОТРУДНИКОВ КОНЧИЛСЯ
     }
 }
+

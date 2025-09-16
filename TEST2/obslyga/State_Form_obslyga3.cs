@@ -195,7 +195,9 @@ namespace TEST2
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            Connection_Form_Obslyga3 connection_Form_Obslyga3 = new Connection_Form_Obslyga3();
+            connection_Form_Obslyga3.Show();
+            this.Hide();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -218,7 +220,13 @@ namespace TEST2
 
         private void richTextBox1_MouseLeave_1(object sender, EventArgs e)
         {
-           richTextBox1.Visible=false;
+            richTextBox1.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            task_3lvl task_3Lvl = new task_3lvl();
+            task_3Lvl.Show();
         }
     }
 }
