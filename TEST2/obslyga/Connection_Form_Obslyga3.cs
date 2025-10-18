@@ -206,7 +206,7 @@ namespace TEST2
         {
             richTextBox1.Visible = false;
         }
-        //ЛИСТ СОТРУДНИКОВ
+        //ЛИСT СОТРУДНИКОВ
         private void InitializeConnectionTab()
         {
             // Создаем вкладку
